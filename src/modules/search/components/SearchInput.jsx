@@ -11,8 +11,8 @@ const SearchInput = ({
   placeholder = 'Search for a product.',
 }) => (
   <form onSubmit={onSubmit}>
-    <input type='search' placeholder={placeholder}/>
-    <button type='submit'/>
+    <input type='text' placeholder={placeholder}/>
+    <button type='submit'>Search</button>
   </form>
 );
 

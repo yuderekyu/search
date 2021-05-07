@@ -7,20 +7,15 @@ const propTypes = {
 };
 
 const ResultList = ({ data }) => {
-  const generateItems = () => {
-    const items = data.map(item => (
-      <ResultItem
-        id={item.ProductId}
-        name={item.Name}
-      />
-    ));
-
-    return items;
-  };
-
   return (
     <ul>
-      {generateItems()}
+      {data.map(item => (
+        <ResultItem
+          id={item.ProductId}
+          name={item.Name}
+          key={item.ProductId}
+        />
+      ))}
     </ul>
   );
 };

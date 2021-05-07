@@ -1,9 +1,9 @@
-import Search from './Search';
+import SearchPage from './SearchPage';
 import SearchInput from './SearchInput';
 import ResultList from './ResultList';
 import ResultItem from './ResultItem';
 
-export default Search;
+export default SearchPage;
 export {
   SearchInput,
   ResultList,

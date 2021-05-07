@@ -1,9 +1,11 @@
-import Error from './Error.jsx';
-import ErrorBoundary from './ErrorBoundary.jsx';
-import Loading from './Loading.jsx';
+import Error from './Error';
+import ErrorBoundary from './ErrorBoundary';
+import Loading from './Loading';
+import NoResults from './NoResults';
 
 export {
   Error,
   ErrorBoundary,
   Loading,
+  NoResults,
 }
