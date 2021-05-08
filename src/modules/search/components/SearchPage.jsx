@@ -48,7 +48,7 @@ const Search = ({
   }
 
   return (
-    <div className={''}>
+    <div>
       <SearchInput onSubmit={handleOnSubmit} />
       {result}
     </div>
