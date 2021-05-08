@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import useFetch from '../../common/fetch';
+import useFetch, { UseFetchOptionBuilder } from '../../common/fetch';
 import { Error, Loading, NoResults } from '../../common/components';
 import ResultList from './ResultList';
 import SearchInput from './SearchInput';
-
-const ALGOLIA_CONFIG = Object.freeze({
-  'x-algolia-application-id': 'I1CQOYS68C',
-  'x-algolia-api-key': 'eac7b807c0109771a245855c7501fca3',
-});
 
 const propTypes = {
   endpoint: PropTypes.string,
@@ -28,25 +23,11 @@ const Search = ({
     refetch();
   };
 
-  const searchQueryOptions = {
-    data: {
-      query,
-      ...algoliaOptions,
-    }
-  };
-
-  const fetchQueryParams = {
-    queryParams: ALGOLIA_CONFIG,
-  };
-
-  const options = {
-    ...fetchQueryParams,
-    ...searchQueryOptions,
+  const options = UseFetchOptionBuilder.run({
+    algoliaOptions,
     endpoint,
-    enabled: query,
-    method: 'POST',
-    queryKey: ['search', query],
-  };
+    query,
+  });
 
   const {
     status,
@@ -55,21 +36,21 @@ const Search = ({
     refetch,
   } = useFetch(options);
 
-  let content;
+  let result;
   if (status === 'loading') {
-    content = <Loading />;
+    result = <Loading />;
   } if (status === 'error') {
-    content = <Error message={error.message} />;
-  } else if (data?.hits.length) {
-    content = <ResultList data={data.hits}/>;
-  } else if (data?.hits.length < 1) {
-    content = <NoResults />;
+    result = <Error message={error.message} />;
+  } else if (data?.hits?.length) {
+    result = <ResultList data={data.hits}/>;
+  } else if (data?.hits?.length < 1) {
+    result = <NoResults />;
   }
 
   return (
     <div className={''}>
       <SearchInput onSubmit={handleOnSubmit} />
-      {content}
+      {result}
     </div>
   );
 }

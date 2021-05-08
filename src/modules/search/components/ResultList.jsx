@@ -11,9 +11,10 @@ const ResultList = ({ data }) => {
     <ul>
       {data.map(item => (
         <ResultItem
+          description={item.Description}
           id={item.ProductId}
-          name={item.Name}
           key={item.ProductId}
+          name={item.Name}
         />
       ))}
     </ul>

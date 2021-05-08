@@ -7,11 +7,13 @@ const propTypes = {
 };
 
 const ResultItem = ({
+  description,
   id,
   name,
 }) => (
   <li id={id}>
-    {name}
+    <div><b>Name</b>: {name}</div>
+    <div><b>Description</b>: {description}</div>
   </li>
 );
 
