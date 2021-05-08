@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import useFetch, { UseFetchOptionBuilder } from '../../common/fetch';
-import { Error, Loading, NoResults } from '../../common/components';
-import ResultList from './ResultList';
-import SearchInput from './SearchInput';
+import useFetch, { UseFetchOptionBuilder } from 'modules/common/fetch';
+import { Error, Loading } from 'modules/common/components';
+import { ResultList, SearchInput, NoResults } from 'modules/search/components';
 
 const propTypes = {
   endpoint: PropTypes.string,
-  algoliaOptions: PropTypes.object,
+  searchOptions: PropTypes.object,
 };
 
 const Search = ({
   endpoint,
-  algoliaOptions,
+  searchOptions,
 }) => {
   const [query, setQuery] = useState();
 
@@ -24,7 +23,7 @@ const Search = ({
   };
 
   const options = UseFetchOptionBuilder.run({
-    algoliaOptions,
+    searchOptions,
     endpoint,
     query,
   });

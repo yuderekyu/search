@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { fetchData } from '.';
+import { fetchData } from 'modules/common/fetch';
 
 const buildParams = (params) => {
   const paramsArr = Object.keys(params).map(key => `${key}=${params[key]}`);

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ResultItem from './ResultItem';
+import { ResultItem } from 'modules/search/components';
 
 const propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),

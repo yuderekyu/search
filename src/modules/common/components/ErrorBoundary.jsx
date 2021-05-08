@@ -1,5 +1,5 @@
 import React from 'react';
-import Error from './Error.jsx';
+import { Error }from 'modules/common/components';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {

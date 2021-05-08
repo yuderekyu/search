@@ -1,11 +1,13 @@
-import SearchPage from './SearchPage';
-import SearchInput from './SearchInput';
+import NoResults from './NoResults';
 import ResultList from './ResultList';
 import ResultItem from './ResultItem';
+import SearchPage from './SearchPage';
+import SearchInput from './SearchInput';
 
 export default SearchPage;
 export {
-  SearchInput,
+  NoResults,
   ResultList,
   ResultItem,
+  SearchInput,
 };

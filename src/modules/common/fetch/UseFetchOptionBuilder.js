@@ -19,24 +19,24 @@ class UseFetchOptionBuilder {
     };
   };
 
-  static buildDataOptions ({ algoliaOptions, query }) {
+  static buildDataOptions ({ searchOptions, query }) {
     return {
       data: {
         query,
-        ...algoliaOptions,
+        ...searchOptions,
       }
     };
   };
 
   static run (options) {
     const {
-      algoliaOptions,
+      searchOptions,
       endpoint,
       query
     } = options;
 
     return {
-      ...UseFetchOptionBuilder.buildDataOptions({ algoliaOptions, query }),
+      ...UseFetchOptionBuilder.buildDataOptions({ searchOptions, query }),
       ...UseFetchOptionBuilder.buildReactQueryOptions({ query, endpoint }),
       ...UseFetchOptionBuilder.defaultFetchOptions(),
     };
