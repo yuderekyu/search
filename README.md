@@ -1,7 +1,20 @@
-# Getting Started with Create React App
+# Summary
+This project is a functional, minimum viable product for displaying initial search results from an endpoint, with a focus on modular design.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Design Notes
++ Used separation of concerns to split project via domain (search, common).
++ Integrated with the search API in a modular pattern.
++ Implemented loading, error, and no result states.
 
+## Technology Decisions
++ Used `create-react-app` to scaffold the project. The meat and potatoes of my work is within the `src/modules` directory.
++ Used `react-query` to handle fetching states, (loading/error/success). This saved me from some boilerplate and establishes a standardized fetching pattern for React.
++ I have omitted styles in favor of focusing on functionality. If I spent more time, I would probably explore css in js libraries such as styled-components or emotion to co-locate styles with components.
+
+## Next Steps
++ Implement pagination. The implementation, as shipped, will display the first 20 hits only.
+
+# Development
 ## Available Scripts
 
 In the project directory, you can run:

@@ -13,8 +13,8 @@ const ResultItem = ({
   name,
 }) => (
   <li id={id}>
-    <div><b>Name</b>: {name}</div>
-    <div><b>Description</b>: {description}</div>
+    {name ? <div><b>Name</b>: {name}</div> : null}
+    {description ? <div><b>Description</b>: {description}</div> : null}
   </li>
 );
 

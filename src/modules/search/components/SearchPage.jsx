@@ -5,7 +5,7 @@ import { Error, Loading } from 'modules/common/components';
 import { ResultList, SearchInput, NoResults } from 'modules/search/components';
 
 const propTypes = {
-  endpoint: PropTypes.string,
+  endpoint: PropTypes.string.isRequired,
   searchOptions: PropTypes.object,
 };
 
